@@ -27,7 +27,11 @@ public class Menu {
 
         for (int i = 0; i < foodName.size(); i++){
             System.out.println("Enter a price for " + foodName.get(i) + ": ");
-            Double newPrice = input.nextDouble();
+            String value = input.nextLine();
+            if (value.isEmpty()) {
+                continue;
+            }
+            Double newPrice = Double.parseDouble(value);
             foodPrice.add(newPrice);
         }
 
